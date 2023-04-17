@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en-US" dir="ltr">
+
+<head>
+
+    <title>Auth</title>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  
+
+
+    <link href="//fonts.cdnfonts.com/css/milliard" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Inter" rel="stylesheet"/>
+
+    <link type="text/css" href="https://microweber.com/userfiles/templates/microweber_com/auth/css/scss/styles.css" rel="stylesheet"/>
+
+    <link href="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Livewire Styles -->
+<style >
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {
+        display: none;
+    }
+
+    [wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {
+        display:none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+
+</head>
+<body>
+
+<script src="https://microweber.com/userfiles/cache/apijs/api_settings.1866293082.public.1.3.3.js"></script>
+<script src="https://microweber.com/apijs?mwv=1.3.3"></script>
+
+<script src="https://microweber.com/userfiles/modules/microweber/api/libs/jqueryui/jquery-ui.js"></script>
+
+<script src="//cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+<!-- Livewire Scripts -->
+
+<script src="https://microweber.com/userfiles/cache/livewire/1.3.3/livewire/livewire.js" data-turbo-eval="false" data-turbolinks-eval="false" ></script>
+<script data-turbo-eval="false" data-turbolinks-eval="false" >
+    
+
+    window.livewire = new Livewire();
+    
+    window.Livewire = window.livewire;
+    window.livewire_app_url = 'https://microweber.com';
+    window.livewire_token = 'BveDPi3twYMIcVqriLpXrIevqumw7ddYi9jL7mUJ';
+
+	
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    let started = false;
+
+    window.addEventListener('alpine:initializing', function () {
+        if (! started) {
+            window.livewire.start();
+
+            started = true;
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        if (! started) {
+            window.livewire.start();
+
+            started = true;
+        }
+    });
+</script>
+
+<script defer src="//cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<script>
+    mw.require('icon_selector.js');
+    mw.iconLoader()
+        .addIconSet('fontAwesome')
+        .addIconSet('materialDesignIcons')
+</script>
+
+<div>
+        <div>
+        <div wire:id="n2RjwOOfLB3nIx2b7dDG" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;n2RjwOOfLB3nIx2b7dDG&quot;,&quot;name&quot;:&quot;microweber_com::auth-login&quot;,&quot;locale&quot;:&quot;en_US&quot;,&quot;path&quot;:&quot;auth\/login&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[&quot;setCaptchaToken&quot;]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;122f7453&quot;,&quot;data&quot;:{&quot;captcha&quot;:null,&quot;email&quot;:null,&quot;password&quot;:null,&quot;listeners&quot;:{&quot;setCaptchaToken&quot;:&quot;setCaptchaToken&quot;}},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;a187a5224acf67c2becd04983ba5cbc5a4e4a2f3d3221d39ebda0f5e06950b61&quot;}}">
+
+    <style>
+        .mw-signin-with-google {
+            background: #000000;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 100%;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 5px;
+        }
+    </style>
+
+    <div class="mw-saas-login-form mw-saas-login-form-background d-flex align-items-center justify-content-center"
+         style="background-image: url('https://microweber.com/userfiles/templates/microweber_com/auth/img/mw-login-process-bg.jpg');">
+        <div class="container">
+            <div class="col-xl-4 col-lg-6 col-md-10 col-12 mx-auto">
+
+                <form method="post" id="user_login" class="clearfix" action="#">
+
+                    <div class="my-4 d-flex justify-content-center">
+                        <a href="/">
+                            <img src="https://microweber.com/userfiles/templates/microweber_com/auth/img/mw-login-process-logo.png" alt="logo">
+                        </a>
+                    </div>
+
+                    
+                    <div class="px-lg-4 px-0">
+                        <label for="exampleInputEmail1" class="form-label mb-0"></label>
+                        <div class="mw-login-process-placeholder-wrapper position-relative">
+                            <input required type="email" wire:model="email"
+                                   class="form-control " id="exampleInputEmail1"
+                                   aria-describedby="emailHelp">
+                            <span class="mw-login-process-placeholder">Email</span>
+                        </div>
+                                            </div>
+
+                    <div class="px-lg-4 px-0">
+                        <label for="exampleInputPassword1" class="form-label mb-0"></label>
+                        <div class="mw-login-process-placeholder-wrapper position-relative">
+                            <input required type="password" wire:model="password" wire:keydown.enter="login"
+                                   class="form-control "
+                                   id="exampleInputPassword1">
+                            <span class="mw-login-process-placeholder">Password</span>
+                        </div>
+                                            </div>
+
+                    <div>
+    
+    <div class=' module module-captcha ' id='module-captcha'  data-mw-title="Captcha" data-callback="captchaResponse"   data-type="captcha"   parent-module="captcha"   parent-module-id="module-captcha"  >
+    <input type="hidden" name="captcha" data-captcha-version="v3" id="js-mw-google-recaptcha-v3-module-captcha-input">
+
+    <script>
+
+
+        runRecaptchaV3Attach0d5cba261bb7aecdbe4bf2862b436c9b = function () {
+            var captcha_el = $('#js-mw-google-recaptcha-v3-module-captcha-input')
+                if (captcha_el) {
+                    var parent_form = mw.tools.firstParentWithTag(captcha_el[0], 'form')
+                   //   runRecaptchaV30d5cba261bb7aecdbe4bf2862b436c9b();
+                     if (parent_form) {
+
+                        parent_form.$beforepost = runRecaptchaV30d5cba261bb7aecdbe4bf2862b436c9b                    }
+                }
+
+
+
+        }
+
+        mw.on('refreshCaptchaToken', function () {
+            runRecaptchaV30d5cba261bb7aecdbe4bf2862b436c9b();
+        })
+
+
+         runRecaptchaV30d5cba261bb7aecdbe4bf2862b436c9b = function () {
+
+             return  new Promise(function (resolve){
+                grecaptcha.ready(function () {
+
+                    grecaptcha.execute('6LeYFMMkAAAAAJ1f9kR5cXSyAk0dCvQRDzD-Bv3T', {
+                        action: 'auth'
+                    }).then(function (token) {
+
+                        var recaptchaResponse = document.getElementById('js-mw-google-recaptcha-v3-module-captcha-input');
+
+                        if (recaptchaResponse) {
+                            recaptchaResponse.value = token;
+                        }
+
+                                                captchaResponse(token);
+                        
+
+                      resolve(token)
+                    });
+                });
+
+            })
+
+
+        };
+    </script>
+
+
+<script>
+    $(document).ready(function () {
+
+        if (typeof (window.grecaptcha) === 'undefined') {
+
+            $.getScript( "//www.google.com/recaptcha/api.js?render=6LeYFMMkAAAAAJ1f9kR5cXSyAk0dCvQRDzD-Bv3T", function( data, textStatus, jqxhr ) {
+                runRecaptchaV3Attach0d5cba261bb7aecdbe4bf2862b436c9b();
+                runRecaptchaV30d5cba261bb7aecdbe4bf2862b436c9b();
+            });
+        } else {
+            runRecaptchaV3Attach0d5cba261bb7aecdbe4bf2862b436c9b();
+            runRecaptchaV30d5cba261bb7aecdbe4bf2862b436c9b();
+        }
+    });
+</script>
+
+    
+    
+</div>
+    <script>
+        function captchaResponse(token) {
+            window.Livewire.emit('setCaptchaToken', token);
+        }
+    </script>
+</div>
+
+                    <div class="d-flex justify-content-center mt-4">
+                        <button type="button" wire:click="login" class="btn btn-primary">
+                                <span wire:loading wire:target="login">
+                                    <span class="spinner-border spinner-border-sm text-primary" role="status"></span>
+                                    Login...
+                                </span>
+                            <span wire:loading.remove wire:target="login">
+                                    Login
+                                </span>
+                        </button>
+                    </div>
+
+                    <div class="social-login">
+                        <div class="mt-4 text-center">
+                            <div class="text-white text-sm">
+                                or login with
+                                <a href="https://microweber.com/api/user_social_login?provider=google&redirect=https://microweber.com/projects"
+                                   class="mw-signin-with-google">
+                                    <i class="fa fa-google text-white"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="my-4 mb-4 d-flex justify-content-center">
+                        <a class="mx-2" href="/auth/register">Sign Up</a>
+                        <a class="mx-2" href="/auth/forgot-password">Forgot Password</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Livewire Component wire-end:n2RjwOOfLB3nIx2b7dDG -->    </div>
+</div>
+
+<script>
+    mw.require('icon_selector.js');
+    mw.lib.require('bootstrap5js');
+    mw.lib.require('bxslider');
+    mw.lib.require('slick');
+    mw.iconLoader()
+        .addIconSet('iconsMindLine')
+        .addIconSet('iconsMindSolid')
+        .addIconSet('fontAwesome')
+        .addIconSet('materialDesignIcons')
+
+
+    addEventListener('DOMContentLoaded',  function (){
+
+        function initFields () {
+            function runner () {
+                Array.from(document.querySelectorAll('.mw-login-process-placeholder-wrapper > input')).forEach(function (field){
+                    if(!field._$ready) {
+                        field._$ready = {
+                            focus: function (){
+                                this.parentElement.classList.add('focused');
+                            },
+                            blur: function (){
+                                this.parentElement.classList.remove('focused');
+                            },
+                            input: function (){
+                                var val = this.value.trim();
+                                this.parentElement.classList[!!val ? 'add' : 'remove']('has-value');
+                            }
+                        };
+                    }
+
+
+                    var val = field.value.trim();
+                    field.parentElement.classList[!!val ? 'add' : 'remove']('has-value');
+
+                    for (let e in field._$ready) {
+                        field.removeEventListener(e, field._$ready[e]);
+                        field.addEventListener(e, field._$ready[e]);
+                    }
+                })
+            }
+
+
+            runner ();
+            setTimeout(function (){runner ()}, 200)
+
+        }
+
+        Livewire.hook('message.processed', initFields);
+        Livewire.hook('message.sent', initFields)
+        Livewire.hook('message.failed', initFields)
+        Livewire.hook('message.received', initFields)
+        Livewire.hook('message.processed', initFields)
+
+    })
+
+</script>
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/599594841b1bed47ceb0520f/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+
+<!-- Hotjar Tracking Code for https://microweber.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3163332,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1065179-29"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-1065179-29');
+</script>
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "g6d42i7m8h");
+</script>
+</body>
+</html>
